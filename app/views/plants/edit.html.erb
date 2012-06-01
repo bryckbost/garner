@@ -3,8 +3,8 @@
   <%= f.label :name %>
   <%= f.text_field :name %>
   
-  <%= f.label :planted_at %>
-  <%= f.text_field :planted_at %>
+  <%= f.label :planted_at, "Date Planted" %>
+  <%= f.text_field :planted_at, :class => "datepicker" %>
   
   <%= f.label :harvest_time %>
   <%= f.text_field :harvest_time %>
