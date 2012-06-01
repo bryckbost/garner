@@ -12,11 +12,11 @@ class PlantsController < ApplicationController
   end
   
   def new
-    @plant = current_user.plants.new
+    @plant = current_user.plants.build
   end
   
   def create
-    @plant = current_user.plants.new(params[:plant])
+    @plant = current_user.plants.build(params[:plant])
     
     if @plant.save
       redirect_to plants_path
