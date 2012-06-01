@@ -7,6 +7,7 @@ gem 'bson_ext'
 gem 'mongo_mapper', :git => 'git://github.com/jnunemaker/mongomapper.git'
 gem 'bcrypt-ruby', '~> 3.0.0', :require => "bcrypt"
 gem 'chronic'
+gem 'heroku'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
