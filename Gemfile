@@ -1,10 +1,10 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 gem 'rails', '3.2.5'
 gem 'jquery-rails'
 gem 'figaro'
 gem 'bson_ext'
-gem 'mongo_mapper'
+gem 'mongo_mapper', :git => 'git://github.com/jnunemaker/mongomapper.git'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
