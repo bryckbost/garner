@@ -15,7 +15,7 @@ class Plant
   scope :growing, :harvest_at.gte => Time.zone.now
   
   def planted_at=(date)
-    self[:planted_at] = date.is_a?(String) ? Time.zone.parse(date) : date
+    self[:planted_at] = Chronic.parse(date)
   end
 
 private
