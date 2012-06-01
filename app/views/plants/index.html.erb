@@ -1,0 +1,17 @@
+<%= link_to 'Add a plant', new_plant_path %>
+
+<h1>Your Garden</h1>
+
+<h2>Harvested</h2>
+<ul>  
+<% @harvested.each do |plant| %>
+  <li><strong><%= plant.name %></strong> was harvested around <strong><%= plant.harvest_at.strftime('%A, %B %d, %Y') %></strong> <%= link_to 'edit', edit_plant_path(plant) %></li>
+<%- end -%>
+</ul>
+
+<h2>Still growing</h2>
+<ul>
+<% @growing.each do |plant| %>
+  <li><strong><%= plant.name %></strong> will be ready to harvest around <strong><%= plant.harvest_at.strftime('%A, %B %d, %Y') %></strong> <%= link_to 'edit', edit_plant_path(plant) %></li>
+<%- end -%>
+</ul>

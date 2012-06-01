@@ -1,0 +1,21 @@
+BEGIN:VCALENDAR
+METHOD:PUBLISH
+X-WR-TIMEZONE:America/Detroit
+PRODID:-//Apple Inc.//iCal 3.0//EN
+CALSCALE:GREGORIAN
+X-WR-CALNAME:Garner your garden
+VERSION:2.0
+X-WR-RELCALID:36FAED22-B64D-4E85-B82E-9287F1E78320
+X-APPLE-CALENDAR-COLOR:#B027AE
+<%- @growing.each do |plant| -%>
+BEGIN:VEVENT
+SEQUENCE:4
+TRANSP:TRANSPARENT
+UID:<%= plant.to_param %>@<%= request.host %>
+DTSTART;VALUE=DATE:<%= plant.harvest_at.strftime('%Y%m%d') %>
+DTSTAMP:20080714T144610Z<%# FIXME %>
+SUMMARY:<%= plant.name %>
+DTEND;VALUE=DATE:<%= plant.harvest_at.strftime('%Y%m%d')%>
+END:VEVENT
+<%- end -%>
+END:VCALENDAR
