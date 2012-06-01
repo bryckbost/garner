@@ -1,0 +1,21 @@
+<%= form_tag sessions_path do %>
+  <fieldset>
+    <legend>Log in</legend>
+    <div>
+      <%= label_tag :email, "Email", :class => "control-label" %>  
+      <div class="controls">
+        <%= text_field_tag :email, params[:email] %>
+      </div>
+    </div>
+    <div>
+      <%= label_tag :password, "Password", :class => "control-label" %>  
+      <div>
+        <%= password_field_tag :password %>
+      </div>
+    </div>
+    <div>
+      <%= submit_tag "Log in", :class => "btn btn-primary" %>
+      <%= link_to 'Cancel', root_path, :class => "btn" %>
+    </div>
+  </fieldset>
+<% end %>

@@ -7,6 +7,8 @@ class Plant
   key :harvest_at,   Date
   timestamps!
 
+  belongs_to :user
+
   after_save :set_harvest_at
 
   scope :harvested, :harvest_at.lt => Time.zone.now

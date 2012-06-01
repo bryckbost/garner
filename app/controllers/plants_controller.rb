@@ -1,7 +1,9 @@
 class PlantsController < ApplicationController
+  before_filter :require_authentication
+
   def index
-    @harvested = Plant.harvested.sort_by(&:harvest_at)
-    @growing = Plant.growing.sort_by(&:harvest_at)
+    @harvested = current_user.plants.harvested.sort_by(&:harvest_at)
+    @growing = current_user.plants.growing.sort_by(&:harvest_at)
     
     respond_to do |format|
       format.html
@@ -10,11 +12,11 @@ class PlantsController < ApplicationController
   end
   
   def new
-    @plant = Plant.new
+    @plant = current_user.plants.new
   end
   
   def create
-    @plant = Plant.new(params[:plant])
+    @plant = current_user.plants.new(params[:plant])
     
     if @plant.save
       redirect_to plants_path
@@ -22,11 +24,11 @@ class PlantsController < ApplicationController
   end
   
   def edit
-    @plant = Plant.find(params[:id])
+    @plant = current_user.plants.find(params[:id])
   end
   
   def update
-    @plant = Plant.find(params[:id])
+    @plant = current_user.plants.find(params[:id])
     
     if @plant.update_attributes(params[:plant])
       redirect_to plants_path
