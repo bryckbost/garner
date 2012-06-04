@@ -1,14 +1,14 @@
 <%= form_for @plant do |f| %>
-<fieldset class="width2">
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+  <fieldset class="width2">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
   
-  <%= f.label :planted_at, "Date Planted" %>
-  <%= f.text_field :planted_at, :class => "datepicker" %>
+    <%= f.label :planted_at, "Date Planted" %>
+    <%= f.text_field :planted_at, :class => "datepicker" %>
   
-  <%= f.label :harvest_time %>
-  <%= f.text_field :harvest_time, "Harvest time in days",  :placeholder => "e.g. 60 or 55" %>
+    <%= f.label :harvest_time, "Harvest time in days" %>
+    <%= f.text_field :harvest_time,  :placeholder => "e.g. 60 or 55" %>
   
-  <%= f.submit "Save" %>
-</fieldset>
+    <%= f.submit "Save" %>
+  </fieldset>
 <% end %>
