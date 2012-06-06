@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,400italic|Bitter:700' rel='stylesheet' type='text/css'>
+  <title>Garner</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container-fluid">
+        <%= link_to "Garner", root_path, :class => "brand" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row-fluid">
+        <%= yield %>
+    </div><!--/row-->
+
+    <hr>
+
+    <footer>
+      <p>&copy; Company 2012</p>
+    </footer>
+
+  </div><!--/.fluid-container-->
+
+  <%= javascript_include_tag "application" %>
+</body>
+</html>
