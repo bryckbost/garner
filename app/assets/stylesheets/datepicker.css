@@ -1,0 +1,80 @@
+.ui-widget {
+   border: 1px solid #DDD;
+   box-shadow: 3px 3px 20px rgba(0,0,0,0.2);
+   -webkit-box-shadow: 3px 3px 20px rgba(0,0,0,0.2);
+   background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(247,247,247)), to(rgb(232,232,232)));
+}
+.ui-widget-content {
+   padding: 1em;
+}
+.ui-datepicker {
+  display: none;
+   overflow: auto;
+   font: normal 13px;
+}
+.ui-datepicker-header {
+  font-size: 15px;
+}
+.ui-datepicker a {
+   text-decoration: none;
+   color: rgb(108,108,108);
+   display: block;
+   width: 22px;
+   text-align: center;
+}
+.ui-datepicker th {
+  text-align: center;
+  font-weight: normal;
+}
+.ui-datepicker table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.ui-datepicker tbody td {
+   padding: 5px 4px;
+   font-size: 13px;
+   border: 1px solid rgb(201,201,201);
+}
+.ui-datepicker tbody td:hover {
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(95,181,224)), to(rgb(22,148,211)));
+  color: #fff !important;
+}
+.ui-datepicker tbody td a:hover {
+  color: #fff;
+}
+.ui-datepicker tbody .ui-datepicker-today {
+  background: rgb(200,200,200);
+}
+.ui-datepicker tbody .ui-datepicker-today a {
+  color: #fff;
+}
+.ui-datepicker-title {
+   text-align: center;
+}
+.ui-datepicker .ui-icon {
+   display: block;
+   width: 12px;
+   height: 12px;
+   text-indent: -20000px;
+   overflow: hidden;
+   color: #08c;
+}
+.ui-datepicker-prev {
+   float: left;
+   -webkit-transform: rotate(180deg);
+   transform: rotate(180deg);
+}
+.ui-datepicker-prev:after, .ui-datepicker-next:after {
+  content: "▸";
+}
+.ui-datepicker-next {
+  float: right;
+  margin-top: -13px;
+}
+.ui-datepicker-current-day {
+  background: rgb(45,134,179);
+  color: #fff;
+}
+.ui-datepicker-current-day a {
+  color: #fff;
+}

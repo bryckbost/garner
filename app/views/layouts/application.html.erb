@@ -1,29 +1,68 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="utf-8">
+  <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,400italic|Bitter:700' rel='stylesheet' type='text/css'>
   <title>Garner</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-  <header>
-    <h1>Track when your crops should be ready for harvest</h1>
-  </header>
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container-fluid">
+        <%= link_to "Garner", root_path, :class => "brand" %>
+        <div class="btn-group pull-right">
+          <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+            <i class="icon-user"></i> <%= current_user.email %>
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Profile</a></li>
+            <li class="divider"></li>
+            <li><%= link_to "Log out", log_out_path %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <nav>
-    <%= link_to 'Home', root_path %>
-    <% if current_user %>
-      Logged in as <%= current_user.email %>
-      <%= link_to "Log out", log_out_path %>
-    <% else %>
-      <%= link_to "Sign up", sign_up_path %> or 
-      <%= link_to "Log in", log_in_path %>
-    <% end %>
-  </nav>
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span3">
+        <div class="well sidebar-nav">
+          <ul class="nav nav-list">
+            <li class="active"><%= link_to "Home", root_path %></li>
+            <li><a href="#">Link</a></li>
+            <li class="nav-header">Growing</li>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+            <li class="nav-header">Harvested</li>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+          </ul>
+        </div><!--/.well -->
+      </div><!--/span-->
 
-  <%= yield %>
+      <div class="span9">
+        <%= yield %>
+      </div><!--/span-->
+    </div><!--/row-->
 
+    <hr>
+
+    <footer>
+      <p>&copy; Company 2012</p>
+    </footer>
+
+  </div><!--/.fluid-container-->
+
+  <%= javascript_include_tag "application" %>
 </body>
 </html>
