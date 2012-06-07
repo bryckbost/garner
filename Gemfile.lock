@@ -84,6 +84,8 @@ GEM
       bson (~> 1.6.2)
     multi_json (1.3.6)
     netrc (0.7.2)
+    pjax_rails (0.2.1)
+      jquery-rails
     plucky (0.5.1)
       mongo (~> 1.5)
     polyglot (0.3.3)
@@ -146,6 +148,7 @@ DEPENDENCIES
   heroku
   jquery-rails
   mongo_mapper!
+  pjax_rails
   rails (= 3.2.5)
   sass-rails (~> 3.2.3)
   uglifier (>= 1.0.3)
