@@ -3,15 +3,15 @@
 <div class="span3">
   <div class="well sidebar-nav">
     <ul class="nav nav-list">
-      <li class="active"><%= link_to "Dashboard", root_path %></li>
+      <li><%= link_to "Dashboard", root_path %></li>
       <li><a href="#">Calendar</a></li>
       <li class="nav-header">Still Growing</li>
       <% @growing.each do |plant| %>
-        <li><%= link_to plant.name.humanize, plant %></li>
+        <li class="<%= 'active' if plant == @plant %>"><%= link_to plant.name.humanize, plant %></li>
       <%- end -%>
       <li class="nav-header">Ready for Harvest</li>
       <% @harvested.each do |plant| %>
-        <li><%= link_to plant.name.humanize, plant%></li>
+        <li class="<%= 'active' if plant == @plant %>"><%= link_to plant.name.humanize, plant%></li>
       <%- end -%>
     </ul>
   </div><!--/.well -->
