@@ -8,7 +8,7 @@ gem 'mongo_mapper', :git => 'git://github.com/jnunemaker/mongomapper.git'
 gem 'bcrypt-ruby', '~> 3.0.0', :require => "bcrypt"
 gem 'chronic'
 gem 'heroku'
-gem 'pjax_rails'
+gem 'rack-pjax'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
