@@ -1,17 +1,36 @@
-<%= link_to 'Add a plant', new_plant_path %>
+<% content_for :title, @plant ? @plant.name : "Dashboard - Garner" %>
 
-<h1>Your Garden</h1>
+<div class="span3">
+  <div class="well sidebar-nav">
+    <ul class="nav nav-list">
+      <li class="active"><%= link_to "Dashboard", root_path %></li>
+      <li><a href="#">Calendar</a></li>
+      <li class="nav-header">Still Growing</li>
+      <% @growing.each do |plant| %>
+        <li><%= link_to plant.name.humanize, plant %></li>
+      <%- end -%>
+      <li class="nav-header">Ready for Harvest</li>
+      <% @harvested.each do |plant| %>
+        <li><%= link_to plant.name.humanize, plant%></li>
+      <%- end -%>
+    </ul>
+  </div><!--/.well -->
+</div><!--/span-->
 
-<h2>Harvested</h2>
-<ul>  
-<% @harvested.each do |plant| %>
-  <li><strong><%= plant.name %></strong> was harvested around <strong><%= plant.harvest_at.strftime('%A, %B %d, %Y') %></strong> <%= link_to 'edit', edit_plant_path(plant) %></li>
-<%- end -%>
-</ul>
+<div class="span9">
+  <%= link_to 'Add a plant', new_plant_path %>
 
-<h2>Still growing</h2>
-<ul>
-<% @growing.each do |plant| %>
-  <li><strong><%= plant.name %></strong> will be ready to harvest around <strong><%= plant.harvest_at.strftime('%A, %B %d, %Y') %></strong> <%= link_to 'edit', edit_plant_path(plant) %></li>
-<%- end -%>
-</ul>
+  <h2>Still growing</h2>
+  <ul>
+  <% @growing.each do |plant| %>
+    <li><strong><%= plant.name %></strong> will be ready to harvest around <strong><%= plant.harvest_at.strftime('%A, %B %d, %Y') %></strong> <%= link_to 'edit', edit_plant_path(plant) %></li>
+  <%- end -%>
+  </ul>
+
+  <h2>Harvested</h2>
+  <ul>  
+  <% @harvested.each do |plant| %>
+    <li><strong><%= plant.name %></strong> was harvested around <strong><%= plant.harvest_at.strftime('%A, %B %d, %Y') %></strong> <%= link_to 'edit', edit_plant_path(plant) %></li>
+  <%- end -%>
+  </ul>  
+</div>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,400italic|Bitter:700' rel='stylesheet' type='text/css'>
-  <title>Garner</title>
+  <title><%= content_for?(:title) ? content_for(:title) : "Garner" %></title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= csrf_meta_tags %>
 </head>
@@ -29,34 +29,8 @@
   </div>
 
   <div class="container-fluid">
-    <div class="row-fluid">
-      <div class="span3">
-        <div class="well sidebar-nav">
-          <ul class="nav nav-list">
-            <li class="active"><%= link_to "Home", root_path %></li>
-            <li><a href="#">Calendar</a></li>
-            <li class="nav-header">Growing</li>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-            <li class="nav-header">Harvested</li>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-          </ul>
-        </div><!--/.well -->
-      </div><!--/span-->
-
-      <div class="span9">
-        <%= yield %>
-      </div><!--/span-->
+    <div class="row-fluid" data-pjax-container>
+      <%= yield %>      
     </div><!--/row-->
 
     <hr>
@@ -64,7 +38,6 @@
     <footer>
       <p>&copy; Company 2012</p>
     </footer>
-
   </div><!--/.fluid-container-->
 
   <%= javascript_include_tag "application" %>

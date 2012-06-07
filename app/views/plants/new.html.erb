@@ -1,3 +1,23 @@
+<% content_for :title, @plant ? @plant.name : "Add a plant to your garden - Garner" %>
+
+<div class="span3">
+  <div class="well sidebar-nav">
+    <ul class="nav nav-list">
+      <li class="active"><%= link_to "Dashboard", root_path %></li>
+      <li><a href="#">Calendar</a></li>
+      <li class="nav-header">Still Growing</li>
+      <% @growing.each do |plant| %>
+        <li><%= link_to plant.name.humanize, plant %></li>
+      <%- end -%>
+      <li class="nav-header">Ready for Harvest</li>
+      <% @harvested.each do |plant| %>
+        <li><%= link_to plant.name.humanize, plant%></li>
+      <%- end -%>
+    </ul>
+  </div><!--/.well -->
+</div><!--/span-->
+
+<div class="span9">
 <h1>Add a plant</h1>
 <%= form_for @plant do |f| %>
   <fieldset class="width2">
@@ -10,6 +30,7 @@
     <%= f.label :harvest_time, "Harvest time in days" %>
     <%= f.text_field :harvest_time,  :placeholder => "e.g. 60 or 55" %>
   
-    <%= f.submit "Save", :class => "btn" %>
+    <%= f.submit "Save", :class => "btn" %> | <%= link_to 'Cancel', plants_path %>
   </fieldset>
 <% end %>
+</div>

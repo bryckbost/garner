@@ -18,19 +18,9 @@
 </div><!--/span-->
 
 <div class="span9">
-  <%= form_for @plant do |f| %>
-  <fieldset class="width2">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  
-    <%= f.label :planted_at, "Date Planted" %>
-    <%= f.text_field :planted_at, :class => "datepicker" %>
-  
-    <%= f.label :harvest_time %>
-    <%= f.text_field :harvest_time %>
-    
-  
-    <%= f.submit "Update", :class => "btn" %> | <%= link_to 'Cancel', plants_path %>
-  </fieldset>
-  <% end %>
+  <h1><%= @plant.name %></h1>
+
+  <p>planted: <%= @plant.planted_at.strftime('%A, %B %d, %Y') %></p>
+
+  <p>harvest around: <%= @plant.harvest_at.strftime('%A, %B %d, %Y') %></p>
 </div>

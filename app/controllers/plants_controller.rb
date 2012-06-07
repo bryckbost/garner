@@ -1,14 +1,15 @@
 class PlantsController < ApplicationController
-  before_filter :require_authentication
+  before_filter :require_authentication, :find_growing_and_harvested
 
-  def index
-    @harvested = current_user.plants.harvested.sort_by(&:harvest_at)
-    @growing = current_user.plants.growing.sort_by(&:harvest_at)
-    
+  def index    
     respond_to do |format|
       format.html
       format.ics { @growing }
     end
+  end
+  
+  def show
+    @plant = current_user.plants.find(params[:id])
   end
   
   def new
@@ -34,4 +35,11 @@ class PlantsController < ApplicationController
       redirect_to plants_path
     end
   end
+
+private
+  def find_growing_and_harvested
+    @harvested = current_user.plants.harvested.sort_by(&:harvest_at)
+    @growing = current_user.plants.growing.sort_by(&:harvest_at)
+  end
+
 end
