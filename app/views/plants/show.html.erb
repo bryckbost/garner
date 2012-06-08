@@ -23,4 +23,9 @@
   <p>planted: <%= @plant.planted_at.strftime('%A, %B %d, %Y') %></p>
 
   <p>harvest around: <%= @plant.harvest_at.strftime('%A, %B %d, %Y') %></p>
+  
+  <div class="actions">
+    <%= link_to "edit", edit_plant_path(@plant), :class => "btn" %>
+    <%= link_to "delete", plant_path(@plant), :class => "btn" %>
+  </div>
 </div>
