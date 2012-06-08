@@ -1,7 +1,8 @@
 /*
  *= require_self
  *= require bootstrap.min
- *= require_tree .
+ *= require datepicker
+ *= require styles
  */
 
 .sidebar-nav {
