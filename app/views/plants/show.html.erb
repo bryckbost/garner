@@ -1,4 +1,4 @@
-<% content_for :title, @plant ? @plant.name : "Garner" %>
+<% content_for :title, @plant ? "#{@plant.name.humanize} - Garner" : "Garner" %>
 
 <div class="span3">
   <div class="well sidebar-nav">
@@ -19,7 +19,7 @@
 </div><!--/span-->
 
 <div class="span9">
-  <h1><%= @plant.name %></h1>
+  <h1><%= @plant.name.humanize %></h1>
 
   <p>planted: <%= @plant.planted_at.strftime('%A, %B %d, %Y') %></p>
 
