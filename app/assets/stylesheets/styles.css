@@ -35,16 +35,6 @@ label, input, select {
   line-height: 1;
 }
 
-.add-new-plant:before {
-  font-family: 'EntypoRegular';
-  font-size: 24px;
-  content: "";
-}
-.growing:before {
-  font-family: 'EntypoRegular';
-  font-size: 24px;
-  content: ""; 
-}
 .add-on {
   margin-left: -5px;
 }
