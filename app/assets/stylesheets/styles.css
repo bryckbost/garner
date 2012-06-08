@@ -20,7 +20,7 @@ h1, h2, h3, h4, h5, h6 {
 a {
   text-decoration: none;
 }
-label {
+label, input, select {
   font-size: 16px;
 }
 
@@ -38,5 +38,13 @@ label {
 .add-new-plant:before {
   font-family: 'EntypoRegular';
   font-size: 24px;
-  content: "G";
+  content: "";
+}
+.growing:before {
+  font-family: 'EntypoRegular';
+  font-size: 24px;
+  content: ""; 
+}
+.add-on {
+  margin-left: -5px;
 }

@@ -18,19 +18,40 @@
 </div><!--/span-->
 
 <div class="span9">
-  <%= form_for @plant do |f| %>
+  <h1>Editing <%= @plant.name %></h1>
+
+  <%= form_for @plant, :html => {:class => "form-horizontal"} do |f| %>
   <fieldset class="width2">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  
-    <%= f.label :planted_at, "Date Planted" %>
-    <%= f.text_field :planted_at, :class => "datepicker" %>
-  
-    <%= f.label :harvest_time %>
-    <%= f.text_field :harvest_time %>
-    
-  
-    <%= f.submit "Update", :class => "btn" %> | <%= link_to 'Cancel', plants_path %>
+    <legend></legend>
+
+    <div class="control-group">
+      <%= f.label :name, "Plant name", :class => "control-label" %>
+      <div class="controls">
+        <%= f.text_field :name %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :planted_at, "When was this planted?", :class => "control-label" %>
+      <div class="controls">
+        <%= f.text_field :planted_at, :class => "datepicker" %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :harvest_time, :class => "control-label" %>
+      <div class="controls">
+        <div class="input-append">
+          <%= f.text_field :harvest_time, :class => "input-mini" %>
+          <span class="add-on">days</span>          
+        </div>
+      </div>
+    </div>
+
+    <div class="form-actions">  
+      <%= f.submit "Update", :class => "btn btn-primary" %>
+      <%= link_to 'Cancel', plants_path, :class => "btn"%>
+    </div>
   </fieldset>
   <% end %>
 </div>

@@ -5,11 +5,11 @@
     <ul class="nav nav-list">
       <li class="active"><%= link_to "Dashboard", root_path %></li>
       <li><%= link_to "Calendar", calendar_plants_path %></li>
-      <li class="nav-header">Still Growing</li>
+      <li class="nav-header growing">Still Growing</li>
       <% @growing.each do |plant| %>
         <li><%= link_to plant.name.humanize, plant %></li>
       <%- end -%>
-      <li class="nav-header">Ready for Harvest</li>
+      <li class="nav-header garner-these">Ready for Harvest</li>
       <% @harvested.each do |plant| %>
         <li><%= link_to plant.name.humanize, plant%></li>
       <%- end -%>
