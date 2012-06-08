@@ -35,6 +35,13 @@ class PlantsController < ApplicationController
       redirect_to plants_path
     end
   end
+  
+  def destroy
+    @plant = current_user.plants.find(params[:id])
+    @plant.destroy
+
+    redirect_to plants_path
+  end
 
 private
   def find_growing_and_harvested

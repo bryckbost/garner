@@ -26,6 +26,6 @@
   
   <div class="actions">
     <%= link_to "edit", edit_plant_path(@plant), :class => "btn" %>
-    <%= link_to "delete", plant_path(@plant), :class => "btn" %>
+    <%= link_to "delete", @plant, :class => "btn", :method => :delete %>
   </div>
 </div>
