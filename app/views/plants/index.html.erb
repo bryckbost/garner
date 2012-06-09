@@ -8,11 +8,11 @@
       <li><%= link_to 'Add a plant', new_plant_path, :class => "add-new-plant" %></li>
       <li class="nav-header growing">Still Growing</li>
       <% @growing.each do |plant| %>
-        <li><%= link_to plant.name.humanize, plant %></li>
+        <li><%= link_to plant.human_name, plant %></li>
       <%- end -%>
       <li class="nav-header garner-these">Ready for Harvest</li>
       <% @harvested.each do |plant| %>
-        <li><%= link_to plant.name.humanize, plant%></li>
+        <li><%= link_to plant.human_name, plant%></li>
       <%- end -%>
     </ul>
   </div><!--/.well -->
