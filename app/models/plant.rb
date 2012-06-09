@@ -20,6 +20,6 @@ class Plant
 
 private
   def set_harvest_at
-    update_attribute :harvest_at, planted_at + harvest_time.days if self.harvest_at.blank?
+    update_attribute :harvest_at, planted_at + harvest_time.days if self.harvest_at.blank? && harvest_time.present?
   end  
 end
