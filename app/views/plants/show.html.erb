@@ -21,9 +21,9 @@
 <div class="span9 plant">
   <h1><%= @plant.human_name %></h1>
 
-  <p><%= @plant.human_name %> will reach maturity in <%= distance_of_time_in_words(Time.zone.now, @plant.harvest_at, true) %>, on <em><%= @plant.harvest_at.strftime('%A, %B %d, %Y') %></em>.</p>
+  <p><%= @plant.human_name %> will reach maturity in <%= time_ago_in_words(@plant.harvest_at) %>, on <em><%= @plant.harvest_at.strftime('%A, %B %d, %Y') %></em>.</p>
   
-  <p><%= @plant.human_name.last == 's' ? 'They' : 'It' %> <%= @plant.human_name.last == 's' ? 'were' : 'was' %> planted on <em><%= @plant.planted_at.strftime('%A, %B %d, %Y') %></em>.</p>
+  <p><%= @plant.human_name.last == 's' ? 'They' : 'It' %> <%= @plant.human_name.last == 's' ? 'were' : 'was' %> planted <em><%= @plant.planted_at.strftime('%A, %B %d, %Y') %></em>.</p>
 
   <div class="actions">
     <%= link_to "Edit", edit_plant_path(@plant), :class => "btn" %>
