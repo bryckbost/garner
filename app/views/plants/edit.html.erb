@@ -1,4 +1,4 @@
-<% content_for :title, @plant ? @plant.name : "Garner" %>
+<% content_for :title, @plant ? @plant.human_name : "Garner" %>
 
 <div class="span3">
   <div class="well sidebar-nav">
@@ -19,7 +19,7 @@
 </div><!--/span-->
 
 <div class="span9">
-  <h1>Editing <%= @plant.name %></h1>
+  <h1>Edit <%= @plant.human_name %></h1>
 
   <%= form_for @plant, :html => {:class => "form-horizontal"} do |f| %>
   <fieldset class="width2">
@@ -52,6 +52,7 @@
     <div class="form-actions">  
       <%= f.submit "Update", :class => "btn btn-primary" %>
       <%= link_to 'Cancel', plants_path, :class => "btn"%>
+      <%= link_to "Delete", @plant, :class => "btn btn-danger pull-right", :method => :delete %>
     </div>
   </fieldset>
   <% end %>

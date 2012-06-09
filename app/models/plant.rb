@@ -13,6 +13,10 @@ class Plant
 
   scope :harvested, :harvest_at.lt => Time.zone.now
   scope :growing, :harvest_at.gte => Time.zone.now
+
+  def human_name
+    name.humanize
+  end
   
   def planted_at=(date)
     self[:planted_at] = Chronic.parse(date)
