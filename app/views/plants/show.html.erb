@@ -19,14 +19,17 @@
 </div><!--/span-->
 
 <div class="span9 plant">
-  <h1><%= @plant.human_name %></h1>
+  <div class="row-fluid">
+    <h1><%= @plant.human_name %></h1>
+    <div class="span9 first">
+      <p><%= @plant.human_name %> will reach maturity in <%= time_ago_in_words(@plant.harvest_at) %>, on <em><%= @plant.harvest_at.strftime('%A, %B %d, %Y') %></em>.</p>
 
-  <p><%= @plant.human_name %> will reach maturity in <%= time_ago_in_words(@plant.harvest_at) %>, on <em><%= @plant.harvest_at.strftime('%A, %B %d, %Y') %></em>.</p>
-  
-  <p><%= @plant.human_name.last == 's' ? 'They' : 'It' %> <%= @plant.human_name.last == 's' ? 'were' : 'was' %> planted <em><%= @plant.planted_at.strftime('%A, %B %d, %Y') %></em>.</p>
-
-  <div class="actions">
-    <%= link_to "Edit", edit_plant_path(@plant), :class => "btn" %>
-    <%= link_to "Delete", @plant, :class => "btn btn-danger pull-right", :method => :delete %>
+      <p><%= @plant.human_name.last == 's' ? 'They' : 'It' %> <%= @plant.human_name.last == 's' ? 'were' : 'was' %> planted <em><%= @plant.planted_at.strftime('%A, %B %d, %Y') %></em>.</p>
+    </div>
+    <div class="actions span3">
+      <%= link_to "Edit", edit_plant_path(@plant), :class => "btn" %>
+      <%= link_to "Delete", @plant, :class => "btn btn-danger pull-right", :method => :delete %>
+    </div>
+    
   </div>
 </div>
