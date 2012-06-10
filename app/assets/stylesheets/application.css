@@ -2,6 +2,7 @@
  *= require_self
  *= require bootstrap.min
  *= require datepicker
+ *= require d3
  *= require styles
  */
 

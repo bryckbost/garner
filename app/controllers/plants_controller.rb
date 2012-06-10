@@ -5,6 +5,7 @@ class PlantsController < ApplicationController
     respond_to do |format|
       format.html
       format.ics { @growing }
+      format.csv
     end
   end
   

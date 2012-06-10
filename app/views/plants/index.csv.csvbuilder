@@ -1,0 +1,6 @@
+fields = [:name, :planted_at, :harvest_time, :harvest_at, :created_at, :updated_at]
+csv << ['Name', 'Planted At', 'Harvest Time', 'Harvest At', 'Created', 'Updated']
+
+@growing.each do |plant|
+  csv << fields.map {|field| plant.send(field) }
+end
