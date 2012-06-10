@@ -17,7 +17,7 @@ var svg = d3.select("#chart").selectAll("svg")
   .enter().append("svg")
     .attr("width", width + margin.right + margin.left)
     .attr("height", height + margin.top + margin.bottom)
-    .attr("class", "RdYlGn")
+    .attr("class", "Greens")
   .append("g")
     .attr("transform", "translate(" + (margin.left + (width - cellSize * 53) / 2) + "," + (margin.top + (height - cellSize * 7) / 2) + ")");
 
@@ -53,7 +53,7 @@ d3.csv("/plants.csv", function(csv) {
   rect.filter(function(d) { return d in data; })
       .attr("class", function(d) { return "day q" + data[d].length + "-9"; })
     .select("title")
-      .text(function(d) {console.log(data[d]); return d + ": " + data[d].Name; });
+      .text(function(d) {return d + ": " + data[d].Name; });
 });
 
 function monthPath(t0) {
