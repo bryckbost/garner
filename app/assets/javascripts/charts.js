@@ -53,7 +53,7 @@ d3.csv("/plants.csv", function(csv) {
   rect.filter(function(d) { return d in data; })
       .attr("class", function(d) { return "day q" + data[d].length + "-9"; })
     .select("title")
-      .text(function(d) {return d + ": " + data[d].Name; });
+      .text(function(d) { return d + ": " + $.map($.makeArray(data[d]), function(plant, i) { return plant.Name }).join(", "); });
 });
 
 function monthPath(t0) {
