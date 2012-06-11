@@ -3,6 +3,7 @@
 <div class="span3">
   <div class="well sidebar-nav">
     <ul class="nav nav-list">
+      <li><%= link_to "Dashboard", plants_path %></li>
       <li><%= link_to "Calendar", calendar_plants_path, "data-skip-pjax" => true %></li>
       <li><%= link_to 'Add a plant', new_plant_path, :class => "add-new-plant" %></li>
       <li class="nav-header growing">Still Growing</li>
@@ -13,7 +14,7 @@
       <% @harvested.each do |plant| %>
         <li><%= link_to plant.human_name, plant%></li>
       <%- end -%>
-      <li class="nav-header garner-these">Need More Info</li>
+      <li class="nav-header">Need More Info</li>
       <% @in_progress.each do |plant| %>
         <li><%= link_to plant.human_name, plant%></li>
       <%- end -%>

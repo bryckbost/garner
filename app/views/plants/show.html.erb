@@ -14,6 +14,10 @@
       <% @harvested.each do |plant| %>
         <li class="<%= 'active' if plant == @plant %>"><%= link_to plant.human_name, plant%></li>
       <%- end -%>
+      <li class="nav-header">Need More Info</li>
+      <% @in_progress.each do |plant| %>
+        <li><%= link_to plant.human_name, plant%></li>
+      <%- end -%>
     </ul>
   </div><!--/.well -->
 </div><!--/span-->
@@ -22,9 +26,15 @@
   <div class="row-fluid">
     <h1><%= @plant.human_name %></h1>
     <div class="span9 first">
-      <p><%= @plant.human_name %> will reach maturity in <%= time_ago_in_words(@plant.harvest_at) %> on <em><%= @plant.harvest_at.strftime('%A, %B %d, %Y') %></em>.</p>
+      <% if @plant.harvest_at.present? %>
+        <p><%= @plant.human_name %> will reach maturity in <%= time_ago_in_words(@plant.harvest_at) %> on <em><%= @plant.harvest_at.strftime('%A, %B %d, %Y') %></em>.</p>
 
-      <p><%= @plant.human_name.last == 's' ? 'They' : 'It' %> <%= @plant.human_name.last == 's' ? 'were' : 'was' %> planted <em><%= @plant.planted_at.strftime('%A, %B %d, %Y') %></em>.</p>
+        <p><%= @plant.human_name.last == 's' ? 'They' : 'It' %> <%= @plant.human_name.last == 's' ? 'were' : 'was' %> planted <em><%= @plant.planted_at.strftime('%A, %B %d, %Y') %></em>.</p>
+      <% else %>
+        <div class="well">
+          <p>Uh-oh. Looks like you're missing some information. <%= link_to "Edit #{@plant.human_name}", edit_plant_path(@plant) %> to tell us when you planted it and how many days to maturity.</p>
+        </div>
+      <% end %>
     </div>
     <div class="actions span3">
       <%= link_to "Edit", edit_plant_path(@plant), :class => "btn" %>
