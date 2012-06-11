@@ -24,13 +24,15 @@
 
 <div class="span9">
   <h1>Garner Dashboard</h1>
-  
   <div class="row-fluid">
     <div class="span8">
       <% if current_user.plants.empty? %>
       <div class="well empty-garden">
         <p>Uh-oh. Looks like you don't have any plants in your garden. <%= link_to "Add some now", new_plant_path %> to get started!</p>
         <p>After you add all of the plants in your garden, you'll be able to get notifications for when your plants are nearing maturity.</p>
+      </div>
+      <% else %>
+      <div>
       </div>
       <% end %>
     </div>
