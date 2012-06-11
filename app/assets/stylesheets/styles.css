@@ -27,21 +27,22 @@ label, input, select {
 strong {
   font-weight: normal;
 }
-
 .navbar .brand {
   display: block;
   float: left;
-  padding: 0 20px 12px;
+  position: relative;
+  padding: 4px 20px 12px 60px;
   margin-left: -20px;
+  margin-bottom: 4px;
   font-family: 'Bitter', serif;
   font-size: 20px;
   font-weight: 700;
   line-height: 1;
+  background: transparent url('/assets/garner_logo.png') no-repeat 23px 0;
 }
 .add-on {
   margin-left: -5px;
 }
-
 .plant h1 {
   border-bottom: 1px solid #e5e5e5;
   margin-bottom: 18px;
@@ -49,8 +50,10 @@ strong {
 .first {
   margin-left: 0 !important;
 }
-
-
 .nav-list > .active > a, .nav-list > .active > a:hover {
   background-color: #ebb13d;
+}
+.brand .entypo {
+ font-family: 'EntypoRegular'; 
+ font-size: 36px;
 }
