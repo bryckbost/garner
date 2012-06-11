@@ -48,7 +48,7 @@ private
   def find_growing_and_harvested
     @harvested = current_user.plants.harvested.sort_by(&:harvest_at)
     @growing = current_user.plants.growing.sort_by(&:harvest_at)
-    @all_plants = current_user.plants
+    @in_progress = current_user.plants.where(:planted_at => nil)
   end
 
 end

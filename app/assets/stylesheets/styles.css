@@ -21,6 +21,9 @@ a {
   text-decoration: none;
   color: #83d337;
 }
+a:hover {
+color: #ebb13d;  
+}
 label, input, select {
   font-size: 16px;
 }
@@ -52,4 +55,9 @@ strong {
 }
 .nav-list > .active > a, .nav-list > .active > a:hover {
   background-color: #ebb13d;
+}
+
+.empty-garden p:last-child {
+  padding-bottom: 50px;
+  background: transparent url('/assets/garner_logo.png') no-repeat bottom center;
 }
