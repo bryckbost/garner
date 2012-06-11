@@ -21,7 +21,7 @@ class PlantsController < ApplicationController
     @plant = current_user.plants.build(params[:plant])
     
     if @plant.save
-      redirect_to plants_path
+      redirect_to @plant
     end
   end
   
@@ -33,7 +33,7 @@ class PlantsController < ApplicationController
     @plant = current_user.plants.find(params[:id])
     
     if @plant.update_attributes(params[:plant])
-      redirect_to plants_path
+      redirect_to @plant
     end
   end
   
