@@ -13,7 +13,7 @@ var color = d3.scale.quantize()
     .range(d3.range(9));
 
 var svg = d3.select("#chart").selectAll("svg")
-    .data(d3.range(2012, 2013))
+    .data(d3.range(2015, 2016))
   .enter().append("svg")
     .attr("width", width + margin.right + margin.left)
     .attr("height", height + margin.top + margin.bottom)
